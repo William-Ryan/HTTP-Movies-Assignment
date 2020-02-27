@@ -13,8 +13,8 @@ const UpdateMovie = props => {
     useEffect(() => {
         axios
             .get(`http://localhost:5000/api/movies/${props.match.params.id}`)
-            .then( response => {
-                setMovie(response.data);
+            .then( res => {
+                setMovie(res.data);
             })
     }, [props.match.params.id])
 
@@ -22,11 +22,11 @@ const UpdateMovie = props => {
         setMovie({ ...movie, [event.target.name]: event.target.value});
     }
 
-    const handleSubmit = event => {
-        event.preventDefault();
+    const handleSubmit = e => {
+        e.preventDefault();
         axios
             .put(`http://localhost:5000/api/movies/${movie.id}`, movie)
-            .then(response => {
+            .then(res => {
                 props.history.push(`/movies/${movie.id}`);
             })
             .catch(error => {
