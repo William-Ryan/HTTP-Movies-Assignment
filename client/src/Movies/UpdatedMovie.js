@@ -38,6 +38,7 @@ const UpdateMovie = props => {
         <div>
             <h2>Update Movie</h2>
             <form onSubmit={handleSubmit}>
+                <label htmlFor="title">Title</label>
                 <input
                     type="text"
                     id="title"
@@ -46,6 +47,7 @@ const UpdateMovie = props => {
                     value={movie.title}
                     onChange={handleChange}
                 />
+                <label htmlFor="director">Director</label>
                 <input
                     type="text"
                     id="director"
@@ -54,14 +56,16 @@ const UpdateMovie = props => {
                     value={movie.director}
                     onChange={handleChange}
                 />
+                <label htmlFor="metascore">Metascore</label>
                 <input
                     type="text"
                     id="metascore"
                     name="metascore"
                     placeholder="Enter Metascore"
-                    value={movie.tmetascore}
+                    value={movie.metascore}
                     onChange={handleChange}
                 />
+                <label htmlFor="stars">Stars</label>
                 <input
                     type="text"
                     id="stars"
